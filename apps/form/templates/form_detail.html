@@ -2,13 +2,55 @@
 <html>
 <head>
     <title>{{ form.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #e2e2e2;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        li:hover {
+            background: #d1d1d1;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>{{ form.name }}</h1>
-    <ul>    
-        {% for step in steps %}
-            <li><a href="{% url 'step_form' form.id step.id %}">{{ step.title }}</a></li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h1>{{ form.name }}</h1>
+        <ul>    
+            {% for step in steps %}
+                <li><a href="{% url 'step_form' form.id step.id %}">{{ step.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>

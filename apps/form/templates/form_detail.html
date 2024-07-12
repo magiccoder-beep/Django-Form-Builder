@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ form.name }}</title>
+</head>
+<body>
+    <h1>{{ form.name }}</h1>
+    <ul>    
+        {% for step in steps %}
+            <li><a href="{% url 'step_form' form.id step.id %}">{{ step.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
